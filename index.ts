@@ -1,3 +1,4 @@
+// @ts-ignore
 import {
   constants as fsConstants,
   copyFileSync,
@@ -132,6 +133,7 @@ export = class Rollup extends Plugin {
     }
 
     const options = this._loadOptions();
+    // @ts-ignore
     options.input = this._mapInput(options.input);
     return instrument('rollup', () => {
       return require('rollup')
@@ -187,6 +189,7 @@ export = class Rollup extends Plugin {
     let generateOptions;
 
     if (this.rollupOptions.experimentalCodeSplitting) {
+      // @ts-ignore
       const results = (await chunk.generate(
         Object.assign({}, options, {
           sourcemap: !!options.sourcemap,
@@ -204,6 +207,7 @@ export = class Rollup extends Plugin {
       });
     } else {
       generateOptions = this._generateSourceMapOptions(options);
+      // @ts-ignore
       const result = await chunk.generate(generateOptions);
       this._writeFile(options.file!, options.sourcemap!, result, output);
     }
