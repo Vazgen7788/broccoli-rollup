@@ -1,0 +1,18 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended"],
+  "jsRules": {},
+  "rules": {
+    "no-floating-promises": true,
+    "quotemark": {
+      "options": ["avoid-escape", "single"]
+    },
+    "variable-name": {
+      "options": "allow-leading-underscore"
+    },
+    "object-literal-key-quotes": false,
+    "prefer-for-of": false,
+    "arrow-parens": false
+  },
+  "rulesDirectory": []
+}
